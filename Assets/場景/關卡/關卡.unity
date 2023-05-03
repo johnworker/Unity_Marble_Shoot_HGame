@@ -1530,6 +1530,63 @@ Transform:
   m_Father: {fileID: 1136931209}
   m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &249423978
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3154280500312414917, guid: f4be1177185431d4da0c017c1e6d0a65, type: 3}
+      propertyPath: m_Name
+      value: "\u602A\u7269\u683C\u5B50 \u523A\u9F9C"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151646990319079972, guid: f4be1177185431d4da0c017c1e6d0a65, type: 3}
+      propertyPath: m_RootOrder
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151646990319079972, guid: f4be1177185431d4da0c017c1e6d0a65, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151646990319079972, guid: f4be1177185431d4da0c017c1e6d0a65, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151646990319079972, guid: f4be1177185431d4da0c017c1e6d0a65, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151646990319079972, guid: f4be1177185431d4da0c017c1e6d0a65, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151646990319079972, guid: f4be1177185431d4da0c017c1e6d0a65, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151646990319079972, guid: f4be1177185431d4da0c017c1e6d0a65, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151646990319079972, guid: f4be1177185431d4da0c017c1e6d0a65, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151646990319079972, guid: f4be1177185431d4da0c017c1e6d0a65, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151646990319079972, guid: f4be1177185431d4da0c017c1e6d0a65, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151646990319079972, guid: f4be1177185431d4da0c017c1e6d0a65, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f4be1177185431d4da0c017c1e6d0a65, type: 3}
 --- !u!1 &290391104
 GameObject:
   m_ObjectHideFlags: 0
@@ -13871,7 +13928,7 @@ MonoBehaviour:
   arrow: {fileID: 1541542561}
   speedTurn: 33
   marble: {fileID: 5987195791161198660, guid: 916e69d88856c094dac0177e8b1ec145, type: 3}
-  canShootMarbleTotal: 15
+  canShootMarbleTotal: 8
   traSpawnPoint: {fileID: 1161412516}
   parAttack: "\u89F8\u767C\u653B\u64CA"
   speedMarble: 1200
@@ -13907,7 +13964,7 @@ MonoBehaviour:
   v3DamagePosition: {x: 0, y: 1, z: -10}
   layerDamage:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
   isPlayer: 1
   soundHurt: {fileID: 8300000, guid: 46c4af07d9c9d9141bff7523a6f9aba9, type: 3}
   soundDead: {fileID: 8300000, guid: 74668eba6eb71814cbef11bf32434c8d, type: 3}
