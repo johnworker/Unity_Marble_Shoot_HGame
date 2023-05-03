@@ -14,7 +14,7 @@ namespace LEO {
         public float damage;
 
         [SerializeField, Header("大於 100 顏色")]
-        private Color colorGratherThan100 = new Color(0.9f, 0.7f, 0.5f);
+        private Color colorGratherThan100 = new Color(0.9f, 0.1f, 0.1f);
         [SerializeField, Header("大於 200 顏色")]
         private Color colorGratherThan200 = new Color(0.8f, 0.5f, 0.5f);
 
