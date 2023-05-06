@@ -45,11 +45,7 @@ namespace LEO
 
             if(aheadEnemy.Length != 0 && range != 0)
             {
-                aniEnemy.SetBool(parDamage,true);
-            }
-            else
-            {
-                aniEnemy.SetBool(parDamage, false);
+
             }
         }
 
