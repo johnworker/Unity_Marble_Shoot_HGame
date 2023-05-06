@@ -13,6 +13,9 @@ namespace LEO
 
         public GameObject[] aheadEnemy;
 
+        [SerializeField, Header("敵人動畫控制")]
+        private Animator aniEnemy;
+
         #endregion
 
 
