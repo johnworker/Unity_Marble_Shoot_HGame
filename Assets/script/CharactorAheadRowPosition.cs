@@ -15,6 +15,7 @@ namespace LEO
 
         [SerializeField, Header("敵人動畫控制")]
         private Animator aniEnemy;
+        private string parDamage = "觸發受傷";
 
         #endregion
 
@@ -44,7 +45,11 @@ namespace LEO
 
             if(aheadEnemy.Length != 0 && range != 0)
             {
-                
+                aniEnemy.SetBool(parDamage,true);
+            }
+            else
+            {
+                aniEnemy.SetBool(parDamage, false);
             }
         }
 
