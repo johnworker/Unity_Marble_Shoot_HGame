@@ -1,6 +1,7 @@
-using System.Linq;                  // 查詢語言
 using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
+using System.Linq;
 
 namespace LEO
 {
@@ -10,13 +11,17 @@ namespace LEO
         [Header("動作格子角色前一排座標"), SerializeField]
         private Transform[] traCharatorAheadRowPlace;
 
-        [SerializeField]
-        private List<Transform> listPlayerAheadPlace = new List<Transform>();
+        public GameObject[] aheadEnemy;
 
         #endregion
 
 
         #region 事件
+        private void Awake()
+        {
+            traCharatorAheadRowPlace = GetComponent<Transform[]>();
+        }
+
         void Update()
         {
 
@@ -24,11 +29,22 @@ namespace LEO
         #endregion
 
         #region 方法
+        /// <summary>
+        /// 敵人到玩家面前播攻擊動畫
+        /// </summary>
         public void EnemyAniPos()
         {
+            int range = traCharatorAheadRowPlace.Length;
+
             // 清單 = 陣列.轉為清單();
-            listPlayerAheadPlace = traCharatorAheadRowPlace.ToString;
+            // listPlayerPlace = traCharatorAheadRowPlace.ToList();
+
+            if(aheadEnemy.Length != 0 && range != 0)
+            {
+                
+            }
         }
+
         #endregion
     }
 }
