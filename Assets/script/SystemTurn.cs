@@ -51,6 +51,14 @@ public class SystemTurn : SystemFinal
 
         private SystemFinal systemFinal;
 
+        /// <summary>
+        /// 關卡設定
+        /// </summary>
+        public string nextLevel = "Level2";
+        public int levelToUnlock = 2;
+
+        public SceneFader sceneFader;
+
         #endregion
 
         private void Awake()
@@ -145,6 +153,15 @@ public class SystemTurn : SystemFinal
         public void MarbleEat()
         {
             countMarbleEat++;
+        }
+
+        /// <summary>
+        /// 關卡勝利
+        /// </summary>
+        public void WinLevel()
+        {
+            PlayerPrefs.SetInt("levelReached", levelToUnlock);
+            sceneFader.FadeTo(nextLevel);
         }
 
        }
