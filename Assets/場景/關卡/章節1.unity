@@ -14946,7 +14946,7 @@ MonoBehaviour:
   v3DamagePosition: {x: 0, y: 1, z: -10}
   layerDamage:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 384
   isPlayer: 1
   soundHurt: {fileID: 8300000, guid: 46c4af07d9c9d9141bff7523a6f9aba9, type: 3}
   soundDead: {fileID: 8300000, guid: 74668eba6eb71814cbef11bf32434c8d, type: 3}

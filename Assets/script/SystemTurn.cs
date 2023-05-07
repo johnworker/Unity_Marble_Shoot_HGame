@@ -81,7 +81,7 @@ public class SystemTurn : SystemFinal
         ///  ¦^¦¬¼u¯]
         /// </summary>
 
-        private void RecycleMarble()
+        public void RecycleMarble()
         {
             totleCountMarble = systemControl.canShootMarbleTotal;
 
