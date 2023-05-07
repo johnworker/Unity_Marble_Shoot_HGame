@@ -13,8 +13,10 @@ namespace LEO {
 
         public float damage;
 
+        [SerializeField, Header("大於 0 顏色")]
+        private Color colorGratherThan0 = new Color(0.0f, 0.5f, 0.1f);
         [SerializeField, Header("大於 100 顏色")]
-        private Color colorGratherThan100 = new Color(0.9f, 0.1f, 0.1f);
+        private Color colorGratherThan100 = new Color(1.0f, 0.1f, 0.1f);
         [SerializeField, Header("大於 200 顏色")]
         private Color colorGratherThan200 = new Color(0.8f, 0.5f, 0.5f);
 
@@ -33,6 +35,7 @@ namespace LEO {
 
             if (damage >= 200) textDmage.color = colorGratherThan200;
             else if (damage >= 100) textDmage.color = colorGratherThan100;
+            else if (damage >= 0) textDmage.color = colorGratherThan0;
 
             limitUp = Random.Range(0.01f, 0.05f);
 

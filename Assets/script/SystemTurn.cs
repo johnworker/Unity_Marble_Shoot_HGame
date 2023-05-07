@@ -57,7 +57,7 @@ public class SystemTurn : SystemFinal
         public string nextLevel = "Level2";
         public int levelToUnlock = 2;
 
-        public SceneFader sceneFader;
+        private SceneFader sceneFader;
 
         #endregion
 

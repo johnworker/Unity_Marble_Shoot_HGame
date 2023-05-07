@@ -115,8 +115,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 122
-  colorGratherThan100: {r: 0.2, g: 0.7, b: 0.4, a: 1}
-  colorGratherThan200: {r: 0.8, g: 0.5, b: 0.5, a: 1}
+  colorGratherThan0: {r: 1, g: 0.64744824, b: 0, a: 1}
+  colorGratherThan100: {r: 0.6792453, g: 0.08009967, b: 0.13330606, a: 1}
+  colorGratherThan200: {r: 0.6415094, g: 0.17853329, b: 0.5945257, a: 1}
+  interval: 0.025
 --- !u!1 &4233327748688681313
 GameObject:
   m_ObjectHideFlags: 0

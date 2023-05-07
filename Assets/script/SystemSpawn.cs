@@ -25,6 +25,10 @@ namespace LEO
         /// </summary>
         public int totalCountEnemyLive;
 
+        [Header("格子 彈珠"), SerializeField]
+        private GameObject goMarble;
+
+
         #endregion
 
         #region 事件
@@ -91,8 +95,5 @@ namespace LEO
             }
         }
         #endregion
-
-        [Header("格子 彈珠"), SerializeField]
-        private GameObject goMarble;
     }
 }
