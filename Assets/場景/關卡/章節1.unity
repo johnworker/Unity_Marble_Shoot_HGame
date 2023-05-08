@@ -15331,9 +15331,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d66af769f788124d97a04ffbc9ebe2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slimePower: {fileID: 0}
+  slimePower: {fileID: 7117870741646644900, guid: a39c4ae268b2f324dbc069bf9fb39e20, type: 3}
   speedEnemyEnergy: 500
   traSpawnAttack: {fileID: 1457522762}
+  target: {fileID: 134179524}
 --- !u!4 &1739034819
 Transform:
   m_ObjectHideFlags: 0
