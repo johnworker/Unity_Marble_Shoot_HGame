@@ -8,19 +8,6 @@ namespace LEO{
 public class SystemTurn : SystemFinal
 {
         #region 資料
-        /// <summary>
-        /// 敵人回合
-        /// </summary>
-        public UnityEvent onTurnEnemy;
-        [Header("敵人能量"), SerializeField]
-        private GameObject slimePower;
-        private int canShootEnemyEnergy = 1;
-        private float intervalEnergy = 0.3f;
-        [Header("敵人能量發射速度"), Range(0, 1000)]
-        public float speedEnemyEnergy = 500;
-        [Header("敵人能量生成點"),SerializeField]
-        private Transform traSpawnAttack;
-
 
         // 需要玩家的彈珠資料
         private SystemControl systemControl;
@@ -28,6 +15,8 @@ public class SystemTurn : SystemFinal
         private SystemSpawn systemSpawn;
         // 需要知道回收區域
         private RecycleArea recycleArea;
+
+        public UnityEvent onTurnEnemy;
 
         /// <summary>
         /// 彈珠總數
@@ -68,6 +57,7 @@ public class SystemTurn : SystemFinal
 
         private SceneFader sceneFader;
 
+        private SystemEnemy systemEnemy;
         #endregion
 
         private void Awake()
@@ -77,6 +67,7 @@ public class SystemTurn : SystemFinal
             recycleArea = GameObject.Find("回收區域").GetComponent<RecycleArea>();
             textFloorCount = GameObject.Find("層數數字").GetComponent<TextMeshProUGUI>();
             
+            systemEnemy = GameObject.Find("敵人遠程攻擊").GetComponent<SystemEnemy>();
 
             recycleArea.onRecycle.AddListener(RecycleMarble);
 
@@ -101,7 +92,7 @@ public class SystemTurn : SystemFinal
             {
                 // print("回收完畢，換敵人回合");
                 onTurnEnemy.Invoke();
-                EnemyTurn();
+
                 // 如果沒有敵人就移動結束並生成敵人與彈珠
                 if (FindObjectsOfType<SystemMove>().Length == 0)
                 {
@@ -153,26 +144,6 @@ public class SystemTurn : SystemFinal
                     systemFinal.ShowFinalAndUndateSubTitle("恭喜挑戰關卡成功!");
                 }
             }
-        }
-
-        /// <summary>
-        /// 敵人回合攻擊
-        /// </summary>
-        private void EnemyTurn()
-        {
-            // 史萊姆攻擊
-            spawnSlimeEnergy();
-        }
-
-        private IEnumerator spawnSlimeEnergy()
-        {
-            int total = canShootEnemyEnergy;
-
-                GameObject tempEnemyEnergy = Instantiate(slimePower, traSpawnAttack.position, Quaternion.identity);
-                tempEnemyEnergy.GetComponent<Rigidbody>().AddForce(transform.forward * speedEnemyEnergy);
-
-                yield return new WaitForSeconds(intervalEnergy);
-            print(slimePower);
         }
 
 
