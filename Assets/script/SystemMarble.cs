@@ -22,6 +22,7 @@ namespace LEO
 
         private bool timerRun;
 
+        private float moveDistance = -20;
 
 
         /* 1.偵測彈珠是否碰撞怪物圖層的怪物
@@ -48,17 +49,32 @@ namespace LEO
         {
             if (!collision.gameObject.CompareTag("怪物"))
             {
-                if (timer > timeRecycle) return;
 
                 print(timer);
                 if (timer == timeRecycle)
                 {
-                    gameObject.transform.position -= v3SpeedRecycle;
-                
-
+                    StartCoroutine(Move());
                 }
 
             }
+
+        }
+
+        private IEnumerator Move()
+        {
+            //print(gameObject + "往前移動");
+            float moveCount = 10;
+            float perDistance = moveDistance / moveCount;
+
+            for (int i = 0; i < moveCount; i++)
+            {
+                transform.position -= new Vector3(0, 0, perDistance);
+
+            }
+
+            yield return new WaitForSeconds(0.1f);
+
+
         }
     }
 
