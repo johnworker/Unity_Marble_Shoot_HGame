@@ -12,6 +12,15 @@ public class SystemTurn : SystemFinal
         /// 敵人回合
         /// </summary>
         public UnityEvent onTurnEnemy;
+        [Header("敵人能量"), SerializeField]
+        private GameObject slimePower;
+        private int canShootEnemyEnergy = 1;
+        private float intervalEnergy = 0.3f;
+        [Header("敵人能量發射速度"), Range(0, 1000)]
+        public float speedEnemyEnergy = 500;
+        [Header("敵人能量生成點"),SerializeField]
+        private Transform traSpawnAttack;
+
 
         // 需要玩家的彈珠資料
         private SystemControl systemControl;
@@ -92,9 +101,9 @@ public class SystemTurn : SystemFinal
             {
                 // print("回收完畢，換敵人回合");
                 onTurnEnemy.Invoke();
-
+                EnemyTurn();
                 // 如果沒有敵人就移動結束並生成敵人與彈珠
-                if(FindObjectsOfType<SystemMove>().Length == 0)
+                if (FindObjectsOfType<SystemMove>().Length == 0)
                 {
                     Invoke("MoveEndSpawnEnemy", noMoveObjectAndDelaySpawn);
                 }
@@ -145,6 +154,28 @@ public class SystemTurn : SystemFinal
                 }
             }
         }
+
+        /// <summary>
+        /// 敵人回合攻擊
+        /// </summary>
+        private void EnemyTurn()
+        {
+            // 史萊姆攻擊
+            spawnSlimeEnergy();
+        }
+
+        private IEnumerator spawnSlimeEnergy()
+        {
+            int total = canShootEnemyEnergy;
+
+                GameObject tempEnemyEnergy = Instantiate(slimePower, traSpawnAttack.position, Quaternion.identity);
+                tempEnemyEnergy.GetComponent<Rigidbody>().AddForce(transform.forward * speedEnemyEnergy);
+
+                yield return new WaitForSeconds(intervalEnergy);
+            print(slimePower);
+        }
+
+
 
         /// <summary>
         /// 移動結束號生成敵人和彈珠
