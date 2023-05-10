@@ -29,13 +29,19 @@ namespace LEO
 
         private void OnCollisionEnter(Collision collision)
         {
+            // layerEnemy 是用來設定怪物圖層的變數。
+            // 1 << collision.gameObject.layer 是將碰撞物件的圖層編號轉換成二進位，並向左位移 1 位，因為 layerEnemy 也是一個二進位數字，所以可以進行位元運算。
+            // layerEnemy & (1 << collision.gameObject.layer) 就是將兩個二進位數字進行位元運算，只有當兩個數字對應的位元都是 1 時，結果才會是 1。
+            // 如果結果是 0，表示碰撞到的物件不是怪物圖層，不做任何事情。
+            //如果結果不是 0，表示碰撞到的物件是怪物圖層，就將計時器歸零，讓彈珠不會被回收。
+            
             if ((layerEnemy & (1 << collision.gameObject.layer)) != 0)
             {
                 // 碰到怪物不回收
                 timer = 0f;
             }
 
-            /* 第二種寫法
+            /* // 第二種寫法
              * if (collision.gameObject.layer == LayerMask.NameToLayer("怪物"))
             {
                 // 碰到怪物不回收

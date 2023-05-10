@@ -167,7 +167,7 @@ MonoBehaviour:
   layerEnemy:
     serializedVersion: 2
     m_Bits: 384
-  timeRecycle: 3
+  timeRecycle: 10
   v3SpeedRecycle: {x: 0, y: 0, z: -10}
 --- !u!1 &5987195791194678382
 GameObject:
