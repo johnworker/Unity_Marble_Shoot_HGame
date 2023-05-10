@@ -19,62 +19,64 @@ namespace LEO
         private Vector3 v3SpeedRecycle;
 
         private float timer;
-
         private bool timerRun;
 
-        private float moveDistance = -20;
 
 
         /* 1.偵測彈珠是否碰撞怪物圖層的怪物
          * 2.沒有碰撞怪物多久後回收
          */
 
-        private void Awake()
-        {
-            StartNewTiming();
-        }
-
-        private void Update()
-        {
-            timer += Time.deltaTime;
-        }
-
-        public void StartNewTiming()
-        {
-            timerRun = true;
-            timer = 0;
-        }
-
         private void OnCollisionEnter(Collision collision)
         {
-            if (!collision.gameObject.CompareTag("怪物"))
+            if ((layerEnemy & (1 << collision.gameObject.layer)) != 0)
             {
-
-                print(timer);
-                if (timer == timeRecycle)
-                {
-                    StartCoroutine(Move());
-                }
-
+                // 碰到怪物不回收
+                timer = 0f;
             }
 
+            /* 第二種寫法
+             * if (collision.gameObject.layer == LayerMask.NameToLayer("怪物"))
+            {
+                // 碰到怪物不回收
+                timer = 0f;
+            }
+             */
         }
 
-        private IEnumerator Move()
+        private void FixedUpdate()
         {
-            //print(gameObject + "往前移動");
-            float moveCount = 10;
-            float perDistance = moveDistance / moveCount;
+            // 如果計時器跑動未開 則返回
+            if (!timerRun) return;
+            // 計時遞增
+            timer += Time.fixedDeltaTime;
 
-            for (int i = 0; i < moveCount; i++)
+
+            if (timer >= timeRecycle)
             {
-                transform.position -= new Vector3(0, 0, perDistance);
-
+                // 回收
+                transform.Translate(v3SpeedRecycle * Time.fixedDeltaTime);
+                if (transform.position.z < -20f)
+                {
+                    gameObject.SetActive(false);
+                }
             }
+        }
 
-            yield return new WaitForSeconds(0.1f);
+        // 啟用程式時
+        private void OnEnable()
+        {
+            // 計時器跑動開啟
+            timerRun = true;
+            // 計時歸零
+            timer = 0f;
+        }
 
-
+        // 程式運轉結束時
+        private void OnDisable()
+        {
+            // 計時器跑動關閉
+            timerRun = false;
         }
     }
 
