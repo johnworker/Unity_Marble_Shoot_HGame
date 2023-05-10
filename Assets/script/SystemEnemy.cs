@@ -38,12 +38,12 @@ namespace LEO
             }
             if (target != null)
             {
-                StartCoroutine(spawnSlimeEnergy());
+                StartCoroutine(SpawnSlimeEnergy());
             }
         }
 
         // ¥vµÜ©i§ðÀ» ¤èªk
-        private IEnumerator spawnSlimeEnergy()
+        private IEnumerator SpawnSlimeEnergy()
         {
             
 
