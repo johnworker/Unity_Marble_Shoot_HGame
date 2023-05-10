@@ -59,6 +59,7 @@ public class SystemControl : MonoBehaviour
         /// 座標轉換後實體物件
         /// </summary>
         private Transform traMouse;
+
         #endregion
 
         #region 事件
@@ -75,7 +76,6 @@ public class SystemControl : MonoBehaviour
 
             // 物理 忽略圖層碰撞(圖層1，圖層2)
             Physics.IgnoreLayerCollision(3, 3);
-
         }
 
         private void Update()

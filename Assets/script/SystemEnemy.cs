@@ -6,6 +6,8 @@ namespace LEO
 {
     public class SystemEnemy : MonoBehaviour
     {
+        // 1.用以下功能做出敵人遠程攻擊
+
         /// <summary>
         /// 敵人回合
         /// </summary>
@@ -24,9 +26,20 @@ namespace LEO
         /// <summary>
         /// 敵人回合攻擊
         /// </summary>
-        private void EnemyTurn()
+        public void EnemyTurn()
         {
-            spawnSlimeEnergy();
+            RaycastHit hitInfo;
+            if (Physics.Raycast(transform.position, transform.forward, out hitInfo))
+            {
+                if (hitInfo.collider.gameObject.CompareTag("Player"))
+                {
+                    target = hitInfo.collider.gameObject;
+                }
+            }
+            if (target != null)
+            {
+                StartCoroutine(spawnSlimeEnergy());
+            }
         }
 
         // 史萊姆攻擊 方法

@@ -93,6 +93,10 @@ public class SystemTurn : SystemFinal
                 // print("回收完畢，換敵人回合");
                 onTurnEnemy.Invoke();
 
+                // 1.抓取SystemEnemy.cs裡的 EnemyTurn() 並執行
+                // 呼叫 EnemyTurn() 方法
+                FindObjectOfType<SystemEnemy>().EnemyTurn();
+
                 // 如果沒有敵人就移動結束並生成敵人與彈珠
                 if (FindObjectsOfType<SystemMove>().Length == 0)
                 {
