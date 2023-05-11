@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+
 namespace LEO
 {
     public class LevelSelector : MonoBehaviour
@@ -10,8 +11,10 @@ namespace LEO
 
         public Button[] levelButtons;
 
-        private void Start()
+        private void Awake()
         {
+            fader = GetComponent<SceneFader>();
+
             int levelReached = PlayerPrefs.GetInt("levelReached", 1);
             for (int i = 0; i < levelButtons.Length; i++)
             {
@@ -23,8 +26,13 @@ namespace LEO
         // 選擇器  定義函數為字串 levelName
         public void Select(string levelName)
         {
+            if (fader == null)
+            {
+                return;
+            }
             fader.FadeTo(levelName);
         }
+    }
 
         /*
          
@@ -43,4 +51,3 @@ namespace LEO
         }
         */
     }
-}
