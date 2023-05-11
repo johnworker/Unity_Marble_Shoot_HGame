@@ -467,7 +467,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8687536497281662129, guid: f953d4d5a86abb34b8dcf3938c75dae9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: "\u7AE0\u7BC02"
+      value: Level2
       objectReference: {fileID: 0}
     - target: {fileID: 8687536497281662129, guid: f953d4d5a86abb34b8dcf3938c75dae9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -901,7 +901,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8687536497281662129, guid: f953d4d5a86abb34b8dcf3938c75dae9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: "\u7AE0\u7BC03"
+      value: Level3
       objectReference: {fileID: 0}
     - target: {fileID: 8687536497281662129, guid: f953d4d5a86abb34b8dcf3938c75dae9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1305,8 +1305,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1544833936}
   m_HandleRect: {fileID: 1544833935}
   m_Direction: 3
-  m_Value: 1.0000002
-  m_Size: 0.6473216
+  m_Value: 1.0000001
+  m_Size: 0.64732164
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1589,7 +1589,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8687536497281662129, guid: f953d4d5a86abb34b8dcf3938c75dae9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: "\u7AE0\u7BC04"
+      value: Level4
       objectReference: {fileID: 0}
     - target: {fileID: 8687536497281662129, guid: f953d4d5a86abb34b8dcf3938c75dae9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1738,7 +1738,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8687536497281662129, guid: f953d4d5a86abb34b8dcf3938c75dae9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: "\u7AE0\u7BC01"
+      value: Level1
       objectReference: {fileID: 0}
     - target: {fileID: 8687536497281662129, guid: f953d4d5a86abb34b8dcf3938c75dae9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
