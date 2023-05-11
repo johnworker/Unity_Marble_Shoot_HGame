@@ -51,7 +51,6 @@ namespace LEO
             tempEnemyEnergy.GetComponent<Rigidbody>().AddForce(transform.forward * speedEnemyEnergy);
 
             yield return new WaitForSeconds(intervalEnergy);
-            print(slimePower);
         }
 
     }
