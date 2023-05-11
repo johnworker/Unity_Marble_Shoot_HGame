@@ -13,7 +13,7 @@ namespace LEO
 
         private void Awake()
         {
-            fader = GetComponent<SceneFader>();
+            //fader = GetComponent<SceneFader>();
 
             int levelReached = PlayerPrefs.GetInt("levelReached", 1);
             for (int i = 0; i < levelButtons.Length; i++)
