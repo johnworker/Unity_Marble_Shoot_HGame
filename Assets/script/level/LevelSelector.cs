@@ -25,5 +25,22 @@ namespace LEO
         {
             fader.FadeTo(levelName);
         }
+
+        /*
+         
+        selectedLevel = level;
+        SceneManager.LoadScene("Level" + level);
+        
+        public void SelectLevelOne()
+        {
+            selectedLevel = "Level1";
+            levelText.text = "Level 1 Selected";
+        }
+
+        public void LoadSelectedLevel()
+        {
+            SceneManager.LoadScene(selectedLevel);
+        }
+        */
     }
 }
