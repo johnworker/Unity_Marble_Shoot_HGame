@@ -13,6 +13,7 @@ namespace LEO
 
         private void Awake()
         {
+            // 此物件沒有 SceceFader 名稱的 Component
             //fader = GetComponent<SceneFader>();
 
             int levelReached = PlayerPrefs.GetInt("levelReached", 1);
