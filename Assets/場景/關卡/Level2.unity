@@ -17308,7 +17308,7 @@ MonoBehaviour:
   onTurnEnemy:
     m_PersistentCalls:
       m_Calls: []
-  countFloorMax: 20
+  countFloorMax: 2
   noMoveObjectAndDelaySpawn: 1
 --- !u!1 &2134128087
 GameObject:
