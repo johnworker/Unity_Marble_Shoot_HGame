@@ -14,11 +14,15 @@ namespace LEO
         // SerializeField 將私人欄位顯示
         [Header("怪物陣列"), SerializeField]
         public GameObject[] goEnemys;
-        [Header("生成格子第二排座標"), SerializeField]
-        private Transform[] traSecondPlace;
+        [Header("生成格子第三排座標"), SerializeField]
+        private Transform[] traThirdPlace;
+        [Header("魔王陣列"), SerializeField]
+        public GameObject[] moveBoss;
+        [Header("生成格子第一排座標"), SerializeField]
+        private Transform[] traFirstPlace;
 
         [SerializeField]
-        private List<Transform> listSecondPlace = new List<Transform>();
+        private List<Transform> listThirdPlace = new List<Transform>();
 
         /// <summary>
         /// 怪物與可以吃的彈珠存活總數
@@ -45,38 +49,38 @@ namespace LEO
         public void SpawnRandomEnemy()
         {
             int min = 2;
-            int max = traSecondPlace.Length;
+            int max = traThirdPlace.Length;
 
             int randomCount = Random.Range(min, max);
             // print("隨機怪物數量：" + randomCount);
 
             // 清單 = 陣列.轉為清單();
-            listSecondPlace = traSecondPlace.ToList();
+            listThirdPlace = traThirdPlace.ToList();
 
             // 隨機物件
             System.Random random = new System.Random();
             // 清單 = 清單 的 排序(每個清單內容 => 隨機排序) 轉為清單
-            listSecondPlace = listSecondPlace.OrderBy(x => random.Next()).ToList();
+            listThirdPlace = listThirdPlace.OrderBy(x => random.Next()).ToList();
 
-            int sub = traSecondPlace.Length - randomCount;
+            int sub = traThirdPlace.Length - randomCount;
             // print("要扣除的數量：" + sub);
 
             // 迴圈 刪除 要扣掉的數量
             for (int i = 0; i < sub; i++)
             {
                 // 刪除第一個清單資料
-                listSecondPlace.RemoveAt(0);
+                listThirdPlace.RemoveAt(0);
             }
 
             // 生成所有怪物與彈珠一顆
-            for (int i = 0; i < listSecondPlace.Count; i++)
+            for (int i = 0; i < listThirdPlace.Count; i++)
             {
                 // 如果 i 等於 0 生成彈珠
                 if (i == 0)
                 {
                     Instantiate(
                     goMarble,
-                    listSecondPlace[i].position,
+                    listThirdPlace[i].position,
                     Quaternion.identity);
                 }
                 else
@@ -86,7 +90,7 @@ namespace LEO
                     // 生成怪物
                     Instantiate(
                         goEnemys[randomIndex],
-                        listSecondPlace[i].position,
+                        listThirdPlace[i].position,
                         Quaternion.identity);
                 }
 
