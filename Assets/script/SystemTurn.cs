@@ -50,6 +50,7 @@ public class SystemTurn : SystemFinal
         private SystemFinal systemFinal;
 
         private SystemEnemy systemEnemy;
+
         #endregion
 
         private void Awake()
@@ -133,15 +134,34 @@ public class SystemTurn : SystemFinal
 
             if (countFloor == countFloorMax) isFloorCountMax = true;
 
-            if(isFloorCountMax)
+            // 玩家抵達最終樓層且偵測格子沒有怪才獲勝
+            if (isFloorCountMax)
             {
-                if(FindObjectOfType<SystemMove>().Length == 0)
+                if (AreAllGridsEmpty())
                 {
                     systemFinal.ShowFinalAndUndateSubTitle("恭喜挑戰關卡成功!");
                 }
             }
         }
 
+        // 檢查所有格子是否沒有怪物
+        private bool AreAllGridsEmpty()
+        {
+            // 移動腳本 陣列 物件複數 指定 從移動腳本找出
+            SystemMove[] gridObjects = FindObjectsOfType<SystemMove>();
+
+            // 每個 (移動腳本 物件 在 物件複數)
+            foreach (SystemMove gridObject in gridObjects)
+            {
+                // 如果(物件是有敵人方法)
+                if (gridObject.HasEnemy())
+                {
+                    return false; // 若有格子有怪物，返回 false
+                }
+            }
+
+            return true; // 若所有格子都沒有怪物，返回 true
+        }
 
 
         /// <summary>

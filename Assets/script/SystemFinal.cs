@@ -21,6 +21,10 @@ namespace LEO
         /// </summary>
         private TextMeshProUGUI textSubTitle;
         /// <summary>
+        /// 選擇場景
+        /// </summary>
+        private Button btnchooseSceneLevel;
+        /// <summary>
         /// 重新遊戲
         /// </summary>
         private Button btnReplay;
@@ -28,14 +32,18 @@ namespace LEO
         /// 離開遊戲
         /// </summary>
         private Button btnQuit;
+
+        public SceneFader fader;
         #endregion
 
         private void Awake()
         {
             groupFinal = GameObject.Find("遊戲結束畫面底圖").GetComponent<CanvasGroup>();
             textSubTitle = GameObject.Find("遊戲結束小標題").GetComponent<TextMeshProUGUI>();
+            btnchooseSceneLevel = GameObject.Find("選擇場景").GetComponent<Button>();
             btnReplay = GameObject.Find("重新遊戲").GetComponent<Button>();
             btnQuit = GameObject.Find("離開遊戲").GetComponent<Button>();
+            btnchooseSceneLevel.onClick.AddListener(ChooseSceneLevel);                          // 按下重新遊戲按鈕後 執行 Relay 方法
             btnReplay.onClick.AddListener(Replay);                          // 按下重新遊戲按鈕後 執行 Relay 方法
             btnQuit.onClick.AddListener(Quit);                              // 按下離開遊戲按鈕後 執行 Quit 方法
         }
@@ -65,6 +73,19 @@ namespace LEO
             groupFinal.blocksRaycasts = true;   // 畫布群組.遮擋射線 = 啟動
         }
 
+        private void ChooseSceneLevel()
+        {
+            // 按下按鈕跳到選擇場景
+            fader.FadeTo("LevelSelect");
+            StartCoroutine(LoadLevelAfterFade("LevelSelect"));
+        }
+
+        private IEnumerator LoadLevelAfterFade(string levelName)
+        {
+            yield return new WaitForSeconds(2f);
+
+            SceneManager.LoadScene(levelName);
+        }
         private void Replay()
         {
             string nameCurrent = SceneManager.GetActiveScene().name;        // 取得當前場景名稱

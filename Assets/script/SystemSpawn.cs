@@ -13,7 +13,7 @@ namespace LEO
         // [] 陣列
         // SerializeField 將私人欄位顯示
         [Header("怪物陣列"), SerializeField]
-        private GameObject[] goEnemys;
+        public GameObject[] goEnemys;
         [Header("生成格子第二排座標"), SerializeField]
         private Transform[] traSecondPlace;
 

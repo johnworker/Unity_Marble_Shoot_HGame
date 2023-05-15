@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -37,6 +38,13 @@ namespace LEO
             systemTurn.MoveEndSpawnEnemy();
 
         }
+
+        // 公開 布林值 敵人方法()
+        public bool HasEnemy()
+        {
+            return transform.childCount > 0; // 如果格子中有子物件，表示有怪物存在
+        }
+
     }
 
 }

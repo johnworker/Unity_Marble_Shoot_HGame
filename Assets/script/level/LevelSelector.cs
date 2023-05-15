@@ -17,11 +17,13 @@ namespace LEO
             //fader = GetComponent<SceneFader>();
 
             int levelReached = PlayerPrefs.GetInt("levelReached", 1);
+            /*
             for (int i = 0; i < levelButtons.Length; i++)
             {
                 if(i + 1 > levelReached)
                 levelButtons[i].interactable = false;
             }
+            */
         }
 
         // 選擇器  定義函數為字串 levelName
