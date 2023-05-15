@@ -39,6 +39,7 @@ namespace LEO
         private void Awake()
         {
             SpawnRandomEnemy();
+            SpawnRandomBoss();
         }
         #endregion
 
@@ -97,6 +98,25 @@ namespace LEO
                 totalCountEnemyLive++;
                 // print("怪物與彈珠數量" + totalCountEnemyLive);
             }
+
+
+        }
+
+        /// <summary>
+        /// 生成隨機魔王
+        /// </summary>
+        public void SpawnRandomBoss()
+        {
+            // 只生成一次 魔王陣列3種 和 第一排3個格子座標   只生成一個魔王
+
+            // 隨機選擇魔王陣列中的一個索引
+            int randomIndex = Random.Range(0, moveBoss.Length);
+
+            // 隨機選擇第一排格子的索引
+            int randomPlaceIndex = Random.Range(0, traFirstPlace.Length);
+
+            // 在隨機選擇的第一排格子座標上生成隨機的魔王
+            Instantiate(moveBoss[randomIndex], traFirstPlace[randomPlaceIndex].position, Quaternion.identity); 
         }
         #endregion
     }
