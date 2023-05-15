@@ -17675,9 +17675,9 @@ MonoBehaviour:
   - {fileID: 216983708}
   - {fileID: 111460540}
   moveBoss:
-  - {fileID: 2153153806563167297, guid: cff892a772b755345994f791581ec5c0, type: 3}
   - {fileID: 7691529614041542965, guid: 6f14c141f1d424f4394e1c96edc21583, type: 3}
   - {fileID: 6102356649038738879, guid: 186142645dbdc7b428ca913b039deec1, type: 3}
+  - {fileID: 6550850418111257373, guid: 7a6b0591d1350d84ebde372cb9274866, type: 3}
   traFirstPlace:
   - {fileID: 1545408011}
   - {fileID: 449775097}

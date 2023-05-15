@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 873fac8b4cdac1048852dac1c148c76c, type: 3}
+  m_Name: "\u9B54\u738B1"
+  m_EditorClassIdentifier: 
+  hp: 8000
+  damage: 50
+  goCoin: {fileID: 2939999181377805037, guid: 80718d4774d29b742ba283ac4ea91ce0, type: 3}
+  v2CoinRange: {x: 10, y: 30}
