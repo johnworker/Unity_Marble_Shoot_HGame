@@ -64,7 +64,7 @@ MonoBehaviour:
   imgHp: {fileID: 864983642532398926}
   textHp: {fileID: 1636467046429580893}
   dataEnemy: {fileID: 11400000, guid: 360e0d236f928854a9c73b7791a65537, type: 2}
-  aniEnemy: {fileID: 0}
+  aniEnemy: {fileID: 5866666021909216657, guid: b7b20bc931c427e46a8b1918db64e552, type: 3}
   nameHurtObject: 
   v3DamageSize: {x: 0, y: 0, z: 0}
   v3DamagePosition: {x: 0, y: 0, z: 0}
