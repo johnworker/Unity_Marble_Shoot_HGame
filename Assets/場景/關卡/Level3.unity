@@ -15079,13 +15079,23 @@ MonoBehaviour:
   goEnemys:
   - {fileID: 1387521150070144092, guid: 261b9ddb0b353514aa4cac4ccff92fe5, type: 3}
   - {fileID: 3154280500312414917, guid: f4be1177185431d4da0c017c1e6d0a65, type: 3}
-  traSecondPlace:
-  - {fileID: 2134128091}
-  - {fileID: 243725265}
-  - {fileID: 123618453}
-  - {fileID: 1211271342}
-  - {fileID: 1592124642}
-  listSecondPlace: []
+  traThirdPlace:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  moveBoss:
+  - {fileID: 7691529614041542965, guid: 6f14c141f1d424f4394e1c96edc21583, type: 3}
+  - {fileID: 6102356649038738879, guid: 186142645dbdc7b428ca913b039deec1, type: 3}
+  - {fileID: 6550850418111257373, guid: 7a6b0591d1350d84ebde372cb9274866, type: 3}
+  traFirstPlace:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  listThirdPlace: []
   totalCountEnemyLive: 0
   goMarble: {fileID: 3474032766471172606, guid: 446ec589dafc77b4d89d34bd128bca11, type: 3}
 --- !u!4 &1667389324
