@@ -32,6 +32,7 @@ namespace LEO
             Physics.IgnoreLayerCollision(6, 3);     // 金幣、彈珠忽略碰撞
             Physics.IgnoreLayerCollision(6, 6);     // 金幣、金幣忽略碰撞
             Physics.IgnoreLayerCollision(6, 7);     // 金幣、怪物忽略碰撞
+            Physics.IgnoreLayerCollision(6, 8);     // 金幣、怪物忽略碰撞
 
             traCoinFlyTo = GameObject.Find("金幣要前往的位置").transform;
             managerCoin = GameObject.Find("金幣管理器").GetComponent<ManagerCoin>();

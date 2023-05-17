@@ -86,6 +86,8 @@ public class SystemTurn : SystemFinal
                 // print("回收完畢，換敵人回合");
                 onTurnEnemy.Invoke();
 
+                // 抓取魔王遠程攻擊
+
                 // 1.抓取SystemEnemy.cs裡的 EnemyTurn() 並執行
                 // 呼叫 EnemyTurn() 方法
                 // FindObjectOfType<SystemEnemy>().EnemyTurn();
@@ -137,6 +139,7 @@ public class SystemTurn : SystemFinal
             // 玩家抵達最終樓層且偵測格子沒有怪才獲勝
             if (isFloorCountMax)
             {
+                // 沒有怪物和魔王就勝利
                 if (AreAllGridsEmpty())
                 {
                     systemFinal.ShowFinalAndUndateSubTitle("恭喜挑戰關卡成功!");
@@ -160,6 +163,7 @@ public class SystemTurn : SystemFinal
                 }
             }
 
+
             return true; // 若所有格子都沒有怪物，返回 true
         }
 
@@ -173,6 +177,6 @@ public class SystemTurn : SystemFinal
             countMarbleEat++;
         }
 
-       }
-
     }
+
+}
