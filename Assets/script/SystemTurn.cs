@@ -60,8 +60,6 @@ public class SystemTurn : SystemFinal
             recycleArea = GameObject.Find("Μ跋办").GetComponent<RecycleArea>();
             textFloorCount = GameObject.Find("糷计计").GetComponent<TextMeshProUGUI>();
             
-            systemEnemy = GameObject.Find("寄环祘ю阑").GetComponent<SystemEnemy>();
-
             recycleArea.onRecycle.AddListener(RecycleMarble);
 
             systemFinal = FindObjectOfType<SystemFinal>();

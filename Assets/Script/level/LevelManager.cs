@@ -41,8 +41,7 @@ namespace LEO
             PlayerPrefs.SetInt("SelectedDifficulty", selectedDifficulty);
 
             // 設置難易度按鈕的互動狀態
-            for (int i
-    = 0; i < difficultyButtons.Length; i++)
+            for (int i = 0; i < difficultyButtons.Length; i++)
             {
                 if (i == selectedDifficulty)
                 {
