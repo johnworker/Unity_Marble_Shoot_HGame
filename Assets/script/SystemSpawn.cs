@@ -119,5 +119,6 @@ namespace LEO
             Instantiate(moveBoss[randomIndex], traFirstPlace[randomPlaceIndex].position, Quaternion.identity); 
         }
         #endregion
+
     }
 }

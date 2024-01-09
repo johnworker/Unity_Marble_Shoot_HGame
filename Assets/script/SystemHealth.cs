@@ -67,8 +67,14 @@ namespace LEO {
         #region ¸I¼²¨Æ¥ó
         private void OnCollisionEnter(Collision collision)
         {
+            /*
             if(collision.gameObject.name.Contains(nameHurtObject)) 
                 GetDamage(collision.gameObject.GetComponent<SystemAttack>().valueAttack);
+            */
+            SystemAttack systemAttack = collision.gameObject.GetComponent<SystemAttack>();
+
+            if (systemAttack != null && collision.gameObject.name.Contains(nameHurtObject))
+                GetDamage(systemAttack.valueAttack);
         }
         #endregion
 

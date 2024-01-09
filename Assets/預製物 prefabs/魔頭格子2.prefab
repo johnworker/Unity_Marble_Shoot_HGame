@@ -88,8 +88,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f677dbb5b729bbd4da4d28a02061c9be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dataAttack: {fileID: 0}
-  valueAttack: 0
+  dataAttack: {fileID: 11400000, guid: 06d7d12d6eb658648ac3bbbea3224362, type: 2}
+  valueAttack: 20
 --- !u!1 &7483772269399116449
 GameObject:
   m_ObjectHideFlags: 0

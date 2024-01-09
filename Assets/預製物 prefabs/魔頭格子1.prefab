@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dataAttack: {fileID: 11400000, guid: 06d7d12d6eb658648ac3bbbea3224362, type: 2}
-  valueAttack: 0
+  valueAttack: 10
 --- !u!1001 &7691529613389276126
 PrefabInstance:
   m_ObjectHideFlags: 0

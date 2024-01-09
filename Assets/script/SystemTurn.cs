@@ -150,6 +150,8 @@ public class SystemTurn : SystemFinal
         {
             // 移動腳本 陣列 物件複數 指定 從移動腳本找出
             SystemMove[] gridObjects = FindObjectsOfType<SystemMove>();
+            SystemSpawn[] boss = FindObjectsOfType<SystemSpawn>();
+
 
             // 每個 (移動腳本 物件 在 物件複數)
             foreach (SystemMove gridObject in gridObjects)
