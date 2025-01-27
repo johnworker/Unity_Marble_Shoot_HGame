@@ -24,6 +24,8 @@ namespace LEO
         [SerializeField]
         private List<Transform> listThirdPlace = new List<Transform>();
 
+        public int totalBossAlive = 0; // **追蹤存活的魔王數量**
+
         /// <summary>
         /// 怪物與可以吃的彈珠存活總數
         /// </summary>
@@ -39,7 +41,6 @@ namespace LEO
         private void Awake()
         {
             SpawnRandomEnemy();
-            SpawnRandomBoss();
         }
         #endregion
 
@@ -116,9 +117,10 @@ namespace LEO
             int randomPlaceIndex = Random.Range(0, traFirstPlace.Length);
 
             // 在隨機選擇的第一排格子座標上生成隨機的魔王
-            Instantiate(moveBoss[randomIndex], traFirstPlace[randomPlaceIndex].position, Quaternion.identity); 
+            Instantiate(moveBoss[randomIndex], traFirstPlace[randomPlaceIndex].position, Quaternion.identity);
+
+            totalBossAlive++; // **每生成一個魔王，增加計數**
         }
         #endregion
-
     }
 }

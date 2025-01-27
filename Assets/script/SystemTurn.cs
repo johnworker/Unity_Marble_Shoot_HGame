@@ -83,6 +83,7 @@ public class SystemTurn : SystemFinal
             {
                 // print("回收完畢，換敵人回合");
                 onTurnEnemy.Invoke();
+          
 
                 // 抓取魔王遠程攻擊
 
@@ -130,6 +131,12 @@ public class SystemTurn : SystemFinal
             { 
                 countFloor++;
                 textFloorCount.text = countFloor.ToString();
+
+                // **當第10回合時，生成魔王**
+                if (countFloor == 10)
+                {
+                    systemSpawn.SpawnRandomBoss();
+                }
             }
 
             if (countFloor == countFloorMax) isFloorCountMax = true;
@@ -148,23 +155,23 @@ public class SystemTurn : SystemFinal
         // 檢查所有格子是否沒有怪物
         private bool AreAllGridsEmpty()
         {
-            // 移動腳本 陣列 物件複數 指定 從移動腳本找出
             SystemMove[] gridObjects = FindObjectsOfType<SystemMove>();
-            SystemSpawn[] boss = FindObjectsOfType<SystemSpawn>();
 
-
-            // 每個 (移動腳本 物件 在 物件複數)
             foreach (SystemMove gridObject in gridObjects)
             {
-                // 如果(物件是有敵人方法)
                 if (gridObject.HasEnemy())
                 {
-                    return false; // 若有格子有怪物，返回 false
+                    return false; // **如果還有怪物，不能獲勝**
                 }
             }
 
+            // **確認魔王數量是否為 0**
+            if (systemSpawn.totalBossAlive > 0)
+            {
+                return false; // **如果還有魔王，不能獲勝**
+            }
 
-            return true; // 若所有格子都沒有怪物，返回 true
+            return true; // **所有敵人和魔王都消失時，才可以獲勝**
         }
 
 

@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: -5318601420606451845}
   m_Layer: 0
   m_Name: "\u9B54\u982D\u683C\u5B503"
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

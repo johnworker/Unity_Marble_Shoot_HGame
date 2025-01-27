@@ -133,6 +133,12 @@ namespace LEO {
                 Destroy(gameObject);
                 systemSpawn.totalCountEnemyLive--;
 
+                // **如果這個敵人是魔王，減少 totalBossAlive**
+                if (gameObject.CompareTag("Boss"))
+                {
+                    systemSpawn.totalBossAlive--;
+                }
+
                 DropCoin();
             }
         }
@@ -156,5 +162,6 @@ namespace LEO {
                     );
             }
         }
+
     }
 }
