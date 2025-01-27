@@ -17695,6 +17695,7 @@ MonoBehaviour:
   - {fileID: 449775097}
   - {fileID: 701376001}
   listThirdPlace: []
+  totalBossAlive: 0
   totalCountEnemyLive: 0
   goMarble: {fileID: 3474032766471172606, guid: 446ec589dafc77b4d89d34bd128bca11, type: 3}
 --- !u!4 &1667389324
@@ -17731,7 +17732,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrow: {fileID: 1541542561}
   speedTurn: 33
-  marble: {fileID: 5987195791161198660, guid: 916e69d88856c094dac0177e8b1ec145, type: 3}
+  marble: {fileID: 4141661291557140030, guid: 4f4b0ffd94be0d04da82edf7feb0c998, type: 3}
   canShootMarbleTotal: 8
   traSpawnPoint: {fileID: 1161412516}
   parAttack: "\u89F8\u767C\u653B\u64CA"
